@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MACrosSite.Pages.Car">
+    <VerticalStackLayout>
+        <Label 
+          Text="Parking Car Systen"
+          VerticalOptions="Center" 
+          HorizontalOptions="Center" />
+        <!-- 新增 ListView 綁定 Cars 集合 -->
+        <CollectionView ItemsSource="{Binding car}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame CornerRadius="10"
+                    Padding="12"
+                    BackgroundColor="White"
+                    HasShadow="True">
+                        <Grid ColumnDefinitions="Auto,*"
+                       RowDefinitions="Auto,Auto,Auto"
+                       ColumnSpacing="10">
+
+                            <Label Text="車牌:"
+                            Grid.Row="0"
+                            FontAttributes="Bold"
+                            TextColor="#555" />
+                            <Label Text="{Binding license_place}"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            TextColor="#d32f2f"
+                            FontSize="16" />
+
+                            <Label Text="車型:"
+                            Grid.Row="1"
+                            TextColor="#555"
+                            FontAttributes="Bold" />
+                            <Label Text="{Binding vihical_type}"
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            TextColor="#1976d2"
+                            FontSize="16" />
+
+                            <Label Text="製造日期:"
+                            Grid.Row="2"
+                            TextColor="#555"
+                            FontAttributes="Bold" />
+                            <Label Text="{Binding occupied_time}"
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            TextColor="#e65100"
+                            FontSize="16" />
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
+</ContentView>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MACrosSite.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:sf="clr-namespace:Syncfusion.Maui.Toolkit.SegmentedControl;assembly=Syncfusion.Maui.Toolkit"
+    xmlns:pages="clr-namespace:MACrosSite.Pages"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MACrosSite">
+
+
+    <FlyoutItem Title="首頁" Icon="{StaticResource IconDashboard}" Route="main">
+        <ShellContent Title="Dashboard" ContentTemplate="{DataTemplate pages:MainPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="車輛列表" Icon="{StaticResource IconProjects}" Route="projects">
+        <ShellContent Title="Projects" ContentTemplate="{DataTemplate pages:ProjectListPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="設定" Icon="{StaticResource IconMeta}" Route="manage">
+        <ShellContent Title="Manage Meta" ContentTemplate="{DataTemplate pages:ManageMetaPage}" />
+    </FlyoutItem>
+
+
+
+    <ShellContent Route="main" ContentTemplate="{DataTemplate local:MainPage}" />
+    <ShellContent Route="CarList" ContentTemplate="{DataTemplate pages:CarList}" />
+    
+ 
+    <Shell.FlyoutFooter>
+        <Grid Padding="15">
+            <sf:SfSegmentedControl x:Name="ThemeSegmentedControl" 
+                                   VerticalOptions="Center" 
+                                   HorizontalOptions="Center" 
+                                   SegmentWidth="40" 
+                                   SegmentHeight="40"
+                                   SelectionChanged="SfSegmentedControl_SelectionChanged"/>
+        </Grid>
+    </Shell.FlyoutFooter>
+
+</Shell>

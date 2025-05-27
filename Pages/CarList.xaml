@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MACrosSite.Pages.CarList">
+    <ScrollView>
+        <VerticalStackLayout Spacing="12">
+            <CollectionView ItemsSource="{Binding car}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame CornerRadius="10"
+                               Padding="12"
+                               BackgroundColor="White"
+                               HasShadow="True">
+                            <Grid ColumnDefinitions="Auto,*"
+                                  RowDefinitions="Auto,Auto,Auto"
+                                  ColumnSpacing="10">
+
+                                <Label Text="車牌:"
+                                       Grid.Row="0"
+                                       FontAttributes="Bold"
+                                       TextColor="#555" />
+                                <Label Text="{Binding license_place}"
+                                       Grid.Row="0"
+                                       Grid.Column="1"
+                                       TextColor="#d32f2f"
+                                       FontSize="16" />
+
+                                <Label Text="車型:"
+                                       Grid.Row="1"
+                                       TextColor="#555"
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding vihical_type}"
+                                       Grid.Row="1"
+                                       Grid.Column="1"
+                                       TextColor="#1976d2"
+                                       FontSize="16" />
+
+                                <Label Text="製造日期:"
+                                       Grid.Row="2"
+                                       TextColor="#555"
+                                       FontAttributes="Bold" />
+                                <Label Text="{Binding occupied_time}"
+                                       Grid.Row="2"
+                                       Grid.Column="1"
+                                       TextColor="#e65100"
+                                       FontSize="16" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!-- 按鈕區塊 -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="15" Margin="0,20">
+
+                <!-- 扁平風格按鈕 -->
+                <Button Text="返回首頁"
+                        BackgroundColor="Transparent"
+                        BorderColor="#6200ee"
+                        BorderWidth="2"
+                        TextColor="#6200ee"
+                        CornerRadius="20"
+                        Padding="12,6" />
+
+                <!-- 立體風格按鈕 -->
+                <Button Text="新增車輛"
+                        BackgroundColor="#6200ee"
+                        TextColor="White"
+                        CornerRadius="20"
+                        Padding="12,6"
+                        Shadow="5" />
+            </HorizontalStackLayout>
+
+            <Label Text="🎉 歡迎登入！"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   TextColor="#333"
+                   Margin="0,10" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentView>

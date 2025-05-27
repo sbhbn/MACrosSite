@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"  
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+            x:Class="MACrosSite.Pages.LoginPage"  
+            Title="登入"  
+            >  
+
+   <ScrollView>  
+       <Grid Padding="40"  
+             VerticalOptions="Center"  
+             RowSpacing="20"
+             Background="SkyBlue">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <Image Source="photo.png"
+        HeightRequest="150"
+        WidthRequest="150"
+        RotationX="50"
+        HorizontalOptions="Center"
+         />
+            <Label Text="歡迎登入"
+        FontSize="32"
+        FontAttributes="Bold"
+        TextColor="Aqua"
+                 Margin="0,15"   
+        HorizontalOptions="Center"
+        Grid.Row="1" />
+
+            <Entry x:Name="UsernameEntry"
+        Placeholder="帳號"
+        BackgroundColor="White"
+        TextColor="Black"
+        HeightRequest="45"
+        Margin="0,10"
+        Keyboard="Email"
+        PlaceholderColor="Gray"
+        FontSize="16"
+        Grid.Row="2" />
+
+            <Entry x:Name="PasswordEntry"
+        Placeholder="密碼"
+        IsPassword="True"
+        BackgroundColor="White"
+        TextColor="Black"
+        HeightRequest="45"
+        Margin="0,10"
+        FontSize="16"
+        PlaceholderColor="Gray"
+        Grid.Row="3" />
+
+            <Button Text="登入"
+         Clicked="OnLoginClicked"
+         BackgroundColor="Purple"
+         TextColor="White"
+         FontSize="18"
+         CornerRadius="12"
+         HeightRequest="50"
+         Grid.Row="4" />
+
+            <Label x:Name="ErrorLabel"
+        TextColor="Red"
+        FontSize="14"
+        IsVisible="False"
+        HorizontalOptions="Center"
+        Grid.Row="5" />
+        </Grid>  
+   </ScrollView>  
+</ContentPage>
